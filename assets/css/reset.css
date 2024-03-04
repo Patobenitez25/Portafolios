@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+  font-family: "Poppins";
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+pa a {
+  display: inline;
+}
+
+img,
+video,
+iframe,
+picture,
+figure {
+  display: block;
+  max-width: 100%;
+}
+form,
+input,
+select,
+textarea,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  color: inherit;
+}

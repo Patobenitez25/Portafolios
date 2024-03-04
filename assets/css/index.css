@@ -1,0 +1,220 @@
+/*DEFINICION DE VARIABLES*/
+:root {
+  --color-principal: #ffffff;
+  --color-secundario: #04b4e0;
+  --color-de-fondo: #f1f6f8;
+  --color-transparent: transparent;
+  --color-icon: #b5b6b7;
+  --color-title: #222222;
+  --color-subtitle: #888888;
+  --color-text: #555;
+}
+/*IMAGEN DE FONDO*/
+body {
+  background-image: url(../img/fondo.png);
+  background-size: cover;
+  background-position: -26px -120px;
+  overflow: hidden;
+}
+/*ESTILOS GENERALES*/
+html {
+  font-size: 10px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  background-color: var(--color-de-fondo);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-title);
+}
+/*ESTRUCTURA GENERAL*/
+.layout {
+  position: relative;
+  min-width: 1290px;
+  width: 75%;
+  height: 80vh;
+  min-height: 80vh;
+  margin: 10vh auto;
+  display: grid;
+  grid-template-areas: "aside content";
+  grid-template-columns: 30% 70%;
+  /*Sombra detras del layout*/
+  border-radius: 4rem;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+}
+/*BARRA LATERAL AZUL*/
+.layout__aside {
+  grid-area: aside;
+  border-radius: 4rem 0 0 4rem;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.aside__user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100%;
+  min-width: 30rem;
+  background-color: var(--color-secundario);
+  color: var(--color-principal);
+}
+
+.user-info__container-image {
+  position: relative;
+  display: inline-block;
+  width: 17rem;
+  height: 17rem;
+  margin-top: 6rem;
+  background-color: var(--color-principal);
+  border: 0.3rem solid var(--color-principal);
+  border-radius: 20rem;
+  overflow: hidden;
+}
+.user-info__image {
+  width: 100%;
+}
+
+.user-info__name {
+  margin-top: 2.3rem;
+  font-size: 3.2rem;
+  font-weight: normal;
+  color: var(--color-principal);
+}
+.user-info__job {
+  font-weight: normal;
+  font-size: 1.7rem;
+  color: var(--color-principal);
+}
+
+.user-info__user-links {
+  margin-bottom: 3.6rem;
+}
+.user-links__social {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+a {
+  color: var(--color-principal);
+}
+.social__item {
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  border-radius: 3rem;
+  transition: all 300ms linear;
+}
+.social__item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-info__buttons {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+.user-info__btn {
+  padding: 1.5rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  border: 0.2rem solid var(--color-principal);
+  border-radius: 3.2rem;
+  box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.25);
+  transition: all 300ms linear;
+}
+.user-info__btn:hover {
+  background-color: var(--color-principal);
+  color: var(--color-secundario);
+}
+
+.user-info__footer {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1.2rem;
+}
+/*CONTENEDOR PRINCPIAL*/
+.layout__content {
+  grid-area: content;
+  min-height: 100%;
+  background-color: var(--color-secundario);
+  border-radius: 0 10rem 10rem 0;
+}
+.content__page {
+  min-height: 100%;
+  border-radius: 3.2rem;
+  background-color: var(--color-principal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page__name {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+.page__job {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: var(--color-subtitle);
+}
+/*MENU NAVEGACION LATERAL*/
+.layout__menu {
+  display: block;
+  position: absolute;
+  top: 10;
+  right: -110px;
+  min-width: 9rem;
+  background-color: var(--color-transparent);
+}
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width: 60%;
+  min-height: 32rem;
+  border-radius: 5rem;
+  box-shadow: 0 0 3rem -0.5rem rgba(0, 0, 0, 0.25);
+  background-color: var(--color-principal);
+}
+.menu__item {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.menu__item:hover .menu__icon {
+  color: var(--color-secundario);
+}
+.menu__icon {
+  font-size: 2.8rem;
+  color: var(--color-icon);
+}
+.menu__overlay {
+  position: absolute;
+  right: 0;
+  margin-top: -3rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  color: var(--color-principal);
+  background-color: var(--color-secundario);
+  white-space: nowrap;
+  transition: all 300ms ease-in-out;
+}
+.menu__item:hover .menu__overlay {
+  opacity: 1;
+  right: 100%;
+}
